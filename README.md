@@ -23,11 +23,11 @@ The RAG process generally involves the following steps:
 
 While the specific mathematical operations can vary depending on the chosen models and techniques, some key mathematical concepts underpin RAG:
 
-* **Vector Embeddings:** Text is represented as high-dimensional vectors. Let $d$ be the dimensionality of the embedding space. A text chunk $t_i$ is mapped to a vector $\mathbf{v}_i \in \mathbb{R}^d$. Similarly, a query $q$ is mapped to $\mathbf{v}_q \in \mathbb{R}^d$.
+* **Vector Embeddings:**  Text is represented as high-dimensional vectors. Let $d$ be the dimensionality of the embedding space. A text chunk $t_i$ is mapped to a vector $\mathbf{v}_i \in \mathbb{R}^d$. Similarly, a query $q$ is mapped to $\mathbf{v}_q \in \mathbb{R}^d$.
 
-* **Similarity Metrics:** The relevance of retrieved documents is determined by measuring the similarity between their embeddings and the query embedding. A common metric is **cosine similarity**:
-    $$ \text{similarity}(\mathbf{v}_q, \mathbf{v}_i) = \frac{\mathbf{v}_q \cdot \mathbf{v}_i}{\|\mathbf{v}_q\| \|\mathbf{v}_i\|} $$
-    where $\cdot$ denotes the dot product and $||\cdot||$ denotes the Euclidean norm (L2 norm). The cosine similarity ranges from -1 (completely dissimilar) to 1 (completely similar).
+* **Similarity Metrics:** The relevance of retrieved documents is determined by measuring the similarity between their embeddings and the query embedding. A common metric is cosine similarity:
+$\text{similarity}(\mathbf{v}_q, \mathbf{v}_i) = \frac{\mathbf{v}_q \cdot \mathbf{v}_i}{|\mathbf{v}_q| |\mathbf{v}_i|}$
+where $\cdot$ denotes the dot product and $|\cdot|$ denotes the Euclidean (L2) norm. The cosine similarity ranges from -1 (completely dissimilar) to 1 (completely similar).
 
-* **Probability and Language Models:** The LLM at the generation stage operates based on probability distributions over sequences of tokens. Given the query $q$ and the retrieved context $c$, the LLM aims to generate a response $r$ by maximizing the conditional probability $P(r|q, c)$. This involves complex calculations within the transformer architecture, including attention mechanisms and feedforward networks.
 
+* **Probability and Language Models:** The LLM at the generation stage operates based on probability distributions over sequences of tokens. Given the query $q$ and the retrieved context $c$, the LLM aims to generate a response $r$ by maximizing the conditional probability $P(r \mid q, c)$. This involves complex calculations within the transformer architecture, including attention mechanisms and feedforward networks.
