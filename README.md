@@ -27,7 +27,7 @@ While the specific mathematical operations can vary depending on the chosen mode
 
 * **Similarity Metrics:** The relevance of retrieved documents is determined by measuring the similarity between their embeddings and the query embedding. A common metric is **cosine similarity**:
     $$ \text{similarity}(\mathbf{v}_q, \mathbf{v}_i) = \frac{\mathbf{v}_q \cdot \mathbf{v}_i}{\|\mathbf{v}_q\| \|\mathbf{v}_i\|} $$
-    where $\cdot$ denotes the dot product and $\|\cdot\|$ denotes the Euclidean norm (L2 norm). The cosine similarity ranges from -1 (completely dissimilar) to 1 (completely similar).
+    where $\cdot$ denotes the dot product and $||\cdot||$ denotes the Euclidean norm (L2 norm). The cosine similarity ranges from -1 (completely dissimilar) to 1 (completely similar).
 
 * **Probability and Language Models:** The LLM at the generation stage operates based on probability distributions over sequences of tokens. Given the query $q$ and the retrieved context $c$, the LLM aims to generate a response $r$ by maximizing the conditional probability $P(r|q, c)$. This involves complex calculations within the transformer architecture, including attention mechanisms and feedforward networks.
 
